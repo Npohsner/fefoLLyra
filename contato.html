@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato - Fefo LLyra</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="menu-principal">
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <ul class="menu-itens">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="fefo.html">Fefo LLyra</a></li>
+      <li><a href="repertorio.html">Repertório</a></li>
+      <li><a href="aovivo.html">Ao vivo</a></li>
+      <li><a href="fiqueavontade.html">Fique à vontade</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content">
+    <h1>Contato</h1>
+    <form action="https://formsubmit.co/contatofefollyra@gmail.com" method="POST" class="contact-form">
+      <!-- redirecionamento para a página de obrigado -->
+      <input type="hidden" name="_next" value="obrigado.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required />
+
+      <label for="assunto">Assunto:</label>
+      <textarea id="assunto" name="assunto" rows="8" required></textarea>
+
+      <button type="submit">Enviar</button>
+      <p></p>
+      <p></p>
+      <h5>E-mail: contatofefollyra@gmail.com</h5>
+      <h5>Whatsapp: +55 (11) 9.4185-1588</h5>
+    </form>
+  </main>
+
+  <h2></h2>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 🍔 MENU HAMBÚRGUER
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuItens = document.querySelector('.menu-itens');
+
+      menuToggle?.addEventListener('click', () => {
+        menuItens.classList.toggle('show');
+      });
+
+      document.querySelectorAll('.menu-itens a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuItens.classList.remove('show');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

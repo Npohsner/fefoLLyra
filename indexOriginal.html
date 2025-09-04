@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fefo LLyra - Biografia</title>
+  <link rel="stylesheet" href="styleOriginal.css" />
+</head>
+<body>
+
+  <!-- Menu de navegação -->
+  <nav class="menu-principal">
+    
+    <button class="menu-toggle" aria-label="Abrir menu">MENU</button>
+
+    <ul class="menu-itens">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Fefo LLyra</a></li>
+      <li><a href="#">Repertório</a></li>
+      <li><a href="#">Ao vivo</a></li>
+      <li><a href="#">Fique à vontade</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main class="page-content">
+    <h1>Fefo LLyra</h1>
+
+    <div class="biografia">
+      <div class="carrossel-wrapper">
+        <button class="seta seta-esquerda">&#10094;</button>
+
+        <div class="carrossel">
+          <div class="carrossel-container" id="carrossel">
+            <img src="Imagem/Foto/Foto01.jpg" alt="Fefo LLyra cantando" />
+            <img src="Imagem/Foto/Foto02.jpg" alt="Fefo em apresentação" />
+            <img src="Imagem/Foto/Foto03.jpeg" alt="Fefo em show ao vivo" />
+            <img src="Imagem/Foto/Foto04.jpeg" alt="Fefo em ensaio" />
+            <img src="Imagem/Foto/Foto06.jpeg" alt="Fefo com fãs" />
+          </div>
+        </div>
+
+        <button class="seta seta-direita">&#10095;</button>
+      </div>
+
+      <div class="texto">
+        <p>Fefo LLyra é um artista apaixonado pela música desde a infância.</p>
+        <p>Começou sua jornada em 2023 e não parou mais.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 🎞️ Carrossel
+      const carrossel = document.getElementById('carrossel');
+      const imagens = carrossel?.querySelectorAll('img') || [];
+      let index = 0;
+
+      function rolarPara(indexDestino) {
+        if (!carrossel || imagens.length === 0) return;
+        index = (indexDestino + imagens.length) % imagens.length;
+        carrossel.scrollTo({
+          left: imagens[index].offsetLeft,
+          behavior: 'smooth'
+        });
+      }
+
+      setInterval(() => {
+        rolarPara(index + 1);
+      }, 3000);
+
+      document.querySelector('.seta-esquerda')?.addEventListener('click', () => {
+        rolarPara(index - 1);
+      });
+
+      document.querySelector('.seta-direita')?.addEventListener('click', () => {
+        rolarPara(index + 1);
+      });
+
+      // 🍔 Menu hamburguer
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuItens = document.querySelector('.menu-itens');
+
+      menuToggle?.addEventListener('click', () => {
+        menuItens.classList.toggle('show');
+      });
+
+      document.querySelectorAll('.menu-itens a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuItens.classList.remove('show');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

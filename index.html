@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fefo LLyra</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="Imagem/Video/VideoAbertura.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos em HTML5.
+        </video>
+
+        <!-- Marca d'água -->
+        <img src="Imagem/logo.jpg" alt="Marca d'água Fefo" class="watermark">
+
+        <!-- Menu de navegação sobre o vídeo -->
+        <nav class="menu-principal">
+            <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+            <ul class="menu-itens">
+                <li><a href="fefo.html">Fefo LLyra</a></li>
+                <li><a href="repertorio.html">Repertório</a></li>
+                <li><a href="aovivo.html">Ao vivo</a></li>
+                <li><a href="fiqueavontade.html">Fique à vontade</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Redes sociais -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/fefollyra/" target="_blank">
+            <img src="Imagem/logo instagram.jpeg" alt="Instagram Fefo LLyra" />
+        </a>
+        <a href="https://www.tiktok.com/@fefollyra" target="_blank">
+            <img src="Imagem/194.jpg" alt="TikTok Fefo LLyra" />
+        </a>
+        <a href="https://www.youtube.com/@fefollyra" target="_blank">
+            <img src="Imagem/330685-P9SESK-66.jpg" alt="YouTube Fefo LLyra" />
+        </a>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 🍔 MENU HAMBÚRGUER
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuItens = document.querySelector('.menu-itens');
+
+      menuToggle?.addEventListener('click', () => {
+        menuItens.classList.toggle('show');
+      });
+
+      document.querySelectorAll('.menu-itens a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuItens.classList.remove('show');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

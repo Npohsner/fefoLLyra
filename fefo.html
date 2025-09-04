@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fefo LLyra - Biografia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Menu de navegação -->
+  <nav class="menu-principal">
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+
+    <ul class="menu-itens">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="repertorio.html">Repertório</a></li>
+      <li><a href="aovivo.html">Ao vivo</a></li>
+      <li><a href="fiqueavontade.html">Fique à vontade</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main class="page-content">
+    <h1>Fefo LLyra</h1>
+
+    <div class="biografia">
+      <div class="carrossel-wrapper">
+        <button class="seta seta-esquerda">&#10094;</button>
+
+        <div class="carrossel">
+          <div class="carrossel-container" id="carrossel">
+            <img src="Imagem/Foto/Foto01.jpg" alt="Fefo LLyra cantando" />
+            <img src="Imagem/Foto/Foto02.jpg" alt="Fefo em apresentação" />
+            <img src="Imagem/Foto/Foto03.jpeg" alt="Fefo em show ao vivo" />
+            <img src="Imagem/Foto/Foto04.jpeg" alt="Fefo em ensaio" />
+            <img src="Imagem/Foto/Foto05.jpeg" alt="Fefo em ensaio" />
+            <img src="Imagem/Foto/Foto06.jpeg" alt="Fefo com fãs" />
+            <img src="Imagem/Foto/Foto07.jpeg" alt="Fefo em ensaio" />
+            <img src="Imagem/Foto/Foto09.jpeg" alt="Fefo em ensaio" />
+          </div>
+        </div>
+
+        <button class="seta seta-direita">&#10095;</button>
+      </div>
+
+      <div class="texto">
+        <p>
+          Fefo LLyra é um artista multifacetado que transcende as fronteiras da dança para conquistar novos palcos com sua voz. Com 17 anos de experiência profissional, brilhou em alguns dos maiores palcos do mundo, conquistando títulos mundiais e sul-americanos, além de consolidar-se como um dos principais dançarinos de Lambada e Zouk Brasileiro de sua geração.
+        </p>
+        <br>
+        <p>
+          Em 2023, Fefo decidiu expandir seus horizontes, levando sua mensagem como homem e artista LGBTQIA+ para o universo do pop.
+        </p>
+        <br>
+        <p>
+          Unindo sua vasta trajetória na dança ao vigor artístico na música, Fefo LLyra surge como uma força inovadora, pronto para alcançar novos públicos e explorar territórios desconhecidos.
+        </p>
+        <br>
+        <p>
+          Com seis singles já lançados, em 2025 Fefo apresenta seu primeiro EP, Fique À Vontade, que conta com produção musical de Douglas Moda e da equipe We4 Music, preparação vocal de Magali Mussi e Luci Batista, direção vocal de Magali Mussi, composições de Clau, Fraga, Chum e André Jordão, além das contribuições de Nathalia Ferlin.
+        </p>
+        
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 🎞️ CARROSSEL
+      const carrossel = document.getElementById('carrossel');
+      const imagens = carrossel?.querySelectorAll('img') || [];
+      let index = 0;
+
+      function rolarPara(indexDestino) {
+        if (!carrossel || imagens.length === 0) return;
+        index = (indexDestino + imagens.length) % imagens.length;
+        carrossel.scrollTo({
+          left: imagens[index].offsetLeft,
+          behavior: 'smooth'
+        });
+      }
+
+      // Automático
+      setInterval(() => {
+        rolarPara(index + 1);
+      }, 3000);
+
+      // Setas
+      const setaEsquerda = document.querySelector('.seta-esquerda');
+      const setaDireita = document.querySelector('.seta-direita');
+
+      setaEsquerda?.addEventListener('click', () => {
+        rolarPara(index - 1);
+      });
+
+      setaDireita?.addEventListener('click', () => {
+        rolarPara(index + 1);
+      });
+
+      // 🍔 MENU HAMBÚRGUER
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuItens = document.querySelector('.menu-itens');
+
+      menuToggle?.addEventListener('click', () => {
+        menuItens.classList.toggle('show');
+      });
+
+      document.querySelectorAll('.menu-itens a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuItens.classList.remove('show');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+

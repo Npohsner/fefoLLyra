@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fique à vontade - Fefo LLyra</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Menu fixo -->
+  <nav class="menu-principal">
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <ul class="menu-itens">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="fefo.html">Fefo LLyra</a></li>
+      <li><a href="repertorio.html">Repertório</a></li>
+      <li><a href="aovivo.html">Ao vivo</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content">
+  <h1>Fique à vontade</h1>
+
+  <section class="historia-com-imagens">
+    <!-- Texto único à esquerda -->
+    <div class="bloco-texto">
+      <h2>EP</h2>
+      <br>
+      <p>
+        Fefo LLyra, artista multifacetado e reconhecido internacionalmente na dança, estreia no universo da música com o EP Fique À Vontade — um projeto que transforma sua trajetória em uma experiência sensorial e simbólica.
+      </p>
+      <br>
+      <p>
+       Inspirado nas casas das tias baianas — espaços de acolhimento, liberdade e celebração — o EP conduz o público por cômodos que representam emoções, memórias e afetos. Cada faixa é um ambiente íntimo, no qual o artista compartilha fragmentos de sua história, unindo potência rítmica e vulnerabilidade poética.
+      </p>
+      <br>
+      <p>
+       A produção musical é assinada por Douglas Moda e pela equipe We4 Music, com preparação vocal de Magali Mussi e Luci Batista, direção vocal de Magali Mussi e composições de Clau, Fraga, Chum e André Jordão, além das contribuições de Nathalia Ferlin.
+      </p>
+      <br>
+      <p>
+        O EP também reflete a força de sua equipe pessoal: Rodrigo Lira (produção e direção geral), Tainá Grando (direção de cena e de movimento), Sandra Alves (assistência de produção e assessoria de imprensa), Patrícia Lira (assistência geral, maquiagem e stylist), Peu Lima e Paola Lima (identidade visual), Doug (fotografia e edição), Indyo Films (visualizers e edição), Miguel Sampaio (bastidores), Alisson George (intérprete de Libras nos lyric videos) e Newton Pohsner (programação).
+      </p>
+      <br>
+      <p>
+        Mais do que um registro musical, Fique À Vontade é um manifesto de autenticidade e afeto que conecta dança, música e identidade, reafirmando o compromisso de Fefo LLyra em criar obras que acolhem, representam e expandem possibilidades artísticas.
+      </p>
+    </div>
+
+    <!-- 6 imagens empilhadas à direita -->
+    <div class="bloco-imagens">
+      <img src="Imagem/IdentidadeVisual/image00037.jpeg" alt="Momento 1">
+      <img src="Imagem/IdentidadeVisual/image00038.jpeg" alt="Momento 2">
+      <img src="Imagem/IdentidadeVisual/image00039.jpeg" alt="Momento 3">
+      <img src="Imagem/IdentidadeVisual/image00040.jpeg" alt="Momento 4">
+    </div>
+  </section>
+</main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 🍔 MENU HAMBÚRGUER
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuItens = document.querySelector('.menu-itens');
+
+      menuToggle?.addEventListener('click', () => {
+        menuItens.classList.toggle('show');
+      });
+
+      document.querySelectorAll('.menu-itens a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuItens.classList.remove('show');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

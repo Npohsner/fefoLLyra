@@ -1,0 +1,83 @@
+/*
+PALETA DE CORES
+
+Azul escuro  #043259
+Azul Claro   #008dc1
+Rosa         #F250E7
+Roxo         #8c1456
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+main {
+    min-width: 320;
+    max-width: 900;
+}
+
+body {
+    text-align: center;
+    background-color: #043259;
+}
+
+video{
+    width: 31%;
+}
+
+nav {
+      background-color: #F250E7;
+      padding: 1rem 2rem;
+      font-family: Bangers;
+      min-width: 320;
+      max-width: 900;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      min-width: 320;
+    max-width: 900;
+    }
+
+    nav li {
+      display: inline;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      transition: background-color 0.3s, color 0.3s;
+      min-width: 320;
+    max-width: 900;
+    }
+
+    /* Hover */
+    nav a:hover {
+      color: #008dc1;
+      border-radius: 5px;
+      min-width: 320;
+    max-width: 900;
+    }
+    
+    .video-container {
+    position: relative;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+
+.watermark {
+    position: absolute;
+    top: 50%; /* distância do topo */
+    left: 50%; /* distância da direita */
+    transform: translate(-50%, -50%);
+    width: 80vw; /* ajuste o tamanho conforme necessário */
+    opacity: 0.3; /* transparência da marca d'água */
+    pointer-events: none; /* evita que a imagem bloqueie cliques */
+    min-width: 320;
+    max-width: 900;
+}
